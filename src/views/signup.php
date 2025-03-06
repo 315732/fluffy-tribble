@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html>
-<head>
-    
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign up</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<?php include('sections/header.php'); ?>
 
-</head>
-<body>
-    <p>Sign up</p> 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>
+<p>Sign up</p>
+
+<?php if (isset($message)) echo "<p style='color: green;'>$message</p>"; ?>
+
+<form method="POST" action="">
+    <input type="hidden" name="signup" value="1">
+    
+    <label>Username:</label>
+    <input type="text" name="username" required>
+    <br>
+    <label>Email:</label>
+    <input type="email" name="email" required>
+    <br>
+    <label>Password:</label>
+    <input type="password" name="password" required>
+    <br>
+    <button type="submit">Signup</button>
+</form>
+
+<?php include('sections/footer.php'); ?>
