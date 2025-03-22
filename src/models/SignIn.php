@@ -1,30 +1,30 @@
 <?php
 
-session_start();
+require_once "core/Database.php";
 
-class SignIn {
-    private static $pdo;
+class SignIn 
+{
+    public static function signin(string $usernameOrEmail, string $password): bool|string 
+    {
+        $pdo = Database::connect();
+        $query = "SELECT id, username, email, password_hash FROM users WHERE " .
+                 (filter_var($usernameOrEmail, FILTER_VALIDATE_EMAIL) ? "email" : "username") . " = ?";
+        
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$usernameOrEmail]);
+        $user = $stmt->fetch();
 
-    public static function connect() {
-        if (!self::$pdo) {
-            self::$pdo = new PDO("mysql:host=localhost;dbname=course", "user", "password");
-            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if ($user && password_verify($password, $user['password_hash'])) 
+        {
+            session_start();
+            $_SESSION = [
+                'user_session' => true,
+                'user_id'      => $user['id'],
+                'user_name'    => $user['username'],
+                'user_email'   => $user['email']
+            ];
+            return true;
         }
-        return self::$pdo;
-    }
-
-    public static function signin($username, $password) {
-        $stmt = self::connect()->prepare("SELECT id, password_hash FROM users WHERE username = ?");
-        $stmt->execute([$username]);
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user && password_verify($password, $user['password_hash'])) {
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $username;
-            
-            return "Successfully sign in!";
-        } else {
-            return "Invalid username or password";
-        }
+        return "Қате пайдаланушы аты/электрондық пошта немесе құпиясөз!";
     }
 }

@@ -1,27 +1,34 @@
 <?php
 
-session_start();
+require_once "core/Database.php";
 
-class SignUp {
-    private static $pdo;
+class SignUp 
+{
+    public static function signup(string $username, string $email, string $password): bool|string 
+    {
+        $pdo = Database::connect();
 
-    public static function connect() {
-        if (!self::$pdo) {
-            self::$pdo = new PDO("mysql:host=localhost;dbname=course", "user", "password");
-            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        // Check if username or email already exists
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = ? OR email = ?");
+        $stmt->execute([$username, $email]);
+
+        if ($stmt->fetchColumn() > 0) 
+        {
+            return "Бұл пайдаланушы аты немесе электрондық пошта тіркелген!";
         }
-        return self::$pdo;
-    }
 
-    public static function signup($username, $email, $password) {
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = self::connect()->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
+        // Hash the password and insert user
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
 
-        try {
-            $stmt->execute([$username, $email, $password_hash]);
-            return "Signup successful! You can now sign in.";
-        } catch (PDOException $e) {
-            return "Error: " . $e->getMessage();
+        try 
+        {
+            $stmt->execute([$username, $email, $passwordHash]);
+            return true;
+        } 
+        catch (PDOException $e) 
+        {
+            return "Қате пайда болды: " . $e->getMessage();
         }
     }
 }
