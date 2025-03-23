@@ -1,4 +1,4 @@
-<?php include('sections/header.php'); ?>
+<?php include 'sections/header.php'; ?>
 
 <header class="hero">
     <div class="container">
@@ -16,115 +16,176 @@
                 </a>
             </div>
             <div class="col-lg-6 py-4">
-                <img class="img-fluid rounded" src="views/Public/images/image1.jpg" alt="App Screenshot" class="img-fluid app-screenshot">
+                <div class="card product-card border-0 rounded-4 shadow-sm">
+                    <div class="position-relative">
+                        <div class="overflow-hidden">
+                            <img src="views/Public/images/image1.jpg" alt="App Screenshot" class=" card-img-top product-image-main"">
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>
 </header>
 
-<div class="container px-4 py-5" id="services">
-    <h2 class="pb-2 border-bottom">Қызметтерім</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
-        <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA+ElEQVR4nO2aMQ5BQRRFTyGRiOpTSOyAFdiC1j50FmFTajo6hdIOqDRXJFPIROPjv3nfO8nr59w7M7+YD4E/usAS2AJXQMZTizGwL2Dx+kSkW6CE6ogsC1i0viGya4vIpS0iKnTe5m9EKn7DoGmRX6IQeUE04m1rDWjJYVdbrl+FCNGIYmthfyYUhz1hnbyikQzr5BWNZFgnr2gkwzp5RSMZ1skrGsmwTl7RSIZ18opGMqyTVzSS8ZzI49FnDgxxiNJsgA6OUZoJzrklkcfrrmtOSWSGc9ZJ5AD0cEwFnJPMEVgAI5wyfdpipUxt+sAqfUvc/lQT0DB3TodAi2x6IvoAAAAASUVORK5CYII=" alt="book">
-            </div>
-            <h3 class="fs-2 text-body-emphasis">Курс: ҚМЖ жазу алгоритмі</h3>
-            <p>Жас мұғалімдер мен аттестациядан өтушілер үшін тиімді жоспарлау әдістерін үйретемін.</p>
-        </div>
-        <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACeElEQVR4nO2YsWsUQRSHv9OoSEQUi6hIAiIGGwtLk1gYFdTGf0AbRTsrCxFsJY2NUaO2YhLFQmzs0wmpFLEQEXMeYgQ1StQDvZGB38F6l5vdYWdvN8n+YGB3582b/e7NvDe3UKpUqVUps4za05UCYkoQ8o+AWbUR+Q7cBEaBncB6YAdwGLgB/FgOII/00i71AQ99nSdYBS55zXUNqOh6BJgGakAd+ABMAcPqr8i+kCBWPcBETEhvya7iiEyuS4sEEFEYq+057pmOOuTpaEjjxosGMu3paFLjjiQNdwoZH5CaJ4hNAChFFwqk7gnyW+M2FG1p1TwdVTWuv2ggU56OHmjcsYT29W6BDHs4aQAHNe6uw+4dcBrYGknXl4BvWYKg+pDEiU256Diz0MHmRQTAal3keh/wMUuQngQw45HK/riDzTwwIJ9HgVd6/hwY1PMTWYI0NaQ6UdXarmpPNJeT1XXHXrBnNWT/q6XfJpVN6v+UNUicbDT2AKeA28DnyATnZbPLsXxslKye5Q3Sqo3AOeBq5H7W8RLNU/RMFiD9+nXfA39inCxo3d8DTgJrWqI16Rj7GlirfTYfGmTUkX2StDfARWAzcNlhtwjs15xnQ2/2gZQQrZH66+g/ozkH9Zc6KMhEIIi4dkfz9QIvA/hr01wXIGZ1uLS6H8hnm+I2dtr2FdituS4E9NumNM4aMXuioVpjdWCJ4lgYkJ/AXqXtxSX6bfW32gK8DRzp4CBNbQOu6MT7BRhTvbB15UlgCJMlSCeNZQBhugXSq0+sac5SpggguciUIPwXkW5/cawCx7OISB6fTudWCogpQShWRGZCZ75SpUpRXP0DANK2mPV5B6oAAAAASUVORK5CYII=" alt="teacher">
-            </div>
-            <h3 class="fs-2 text-body-emphasis">Курс: Белсенді әдістер</h3>
-            <p>Сабақта оқушыларды белсенді қатысуға ынталандыратын заманауи әдістерді үйретемін.</p>
-        </div>
-        <div class="feature col">
-            <div class="feature-icon d-inline-flex align-items-center justify-content-center fs-2 mb-3">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACh0lEQVR4nO2aS0hUURjHf1qp0Bipi0ChB7Rr0cO2khvXQSsVI3VahNsWETPVroctFEtxVRs31cJUcCURBNGm7IHQQ6ddEVRYQYWWNw58wmW6l+be85jT4B++zcw533y/ex7fd84d2NBfqgIGgAXgB/AayAEtYueAArAMzANZoBoPdR0IEtoYnqkrBcS6dZcz8HqZGpeAaWBVA0T1nRJf/UDGFcRh4K1G4P+yAtDqYiRsQgRiS7ZHJusAIhDrswlyxSHIZZsg0w5B7trcYnV2p6S2Kr9pTCr7jjsECCKSpqoatHWyjBCBmMov2nrmAci8CZAvHoB8NgGy5AHIGxMgeQ9AciZAmj0AadkA8Wxq5TGgQqUs9mUPQD6ZAHlaKQkx6wFIn6micayMEKOmisaKKePLdbCawqIq5qjb7xCk1yZIxlE1vAhsxbIOWYZZBA7iSBnZ2y/KojRxZap89boYCVuX2Na22FKkEuQIcAZokM9GUkCoVxGID+XrGjCBI+0H1kLB3JHMq+wU8EJe9LySk12zHIzyUsWqAvCJTM31freLANtcgEzEPNmaFL62xJQ/M1jWLmAlZpo8lzuwPUAtsBM4DjwU6wn52S1tF2J8rQH7bIIMayzqSfGxF/hdQvubtiAagW8aIEcSbgorMqrGdV4DQi1upW0JL/yumoaoA95rgJwQP6cT9vsKbDcJMqAB8UEexKaUpc1ZkyAvNUAuiI9jKfu/M3lCvJ8yiJ/ADvExl9LHY1f/kFB542NMEDdC7YZi2nx38Tq6VHUAvyKCPFCUBKPadOKZckUB3otoM1nUZhAPVQXcCgV5NKJNe+h7tWY246nqgUfAA9luozQrdVmT49j4L/QHZfSHQbdo2kMAAAAASUVORK5CYII=" alt="warranty">
-            </div>
-            <h3 class="fs-2 text-body-emphasis">Курс: Аттестацияға дайындық</h3>
-            <p>Аттестациядан өтуші мұғалімдерге тиімді материалдар мен кеңестер беремін.</p>
-        </div>
-    </div>
-</div>
-
-<div class="container mt-5">
-    <h2 class="mb-4"> Танымал өнімдер </h2>
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://web.courstore.com/wp-content/uploads/2023/11/1-1.jpg" class="card-img-top" alt="Product Image">
-                <div class="card-body">
-                    <h5 class="card-title">ҚМЖ: интерактивті құралдар, белсенді әдістер №1</h5>
-                    <p class="card-text">ҚМЖ жазуда заманауи интерактивті құралдар мен белсенді әдістерді қолдану (БАЗАЛЫҚ БІЛІМ)</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="h5 mb-0">40 000 ₸</span>
-                        <div>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-half text-warning"></i>
-                            <small class="text-muted">(4.5)</small>
+<div class=" container">
+                            <div class="text-center mb-5">
+                                <h1 class="section-heading display-4 mb-3">Қызметтерім</h1>
+                            </div>
+                            <div class="row g-4">
+                                <div class="col-md-4">
+                                    <div class="card feature-card h-100 p-4">
+                                        <div class="icon-wrapper bg-soft-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title">Оқу әдістемесі</h3>
+                                        <p class="card-text text-muted">Жас мұғалімдерге оқыту стратегияларын үйретемін.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card feature-card h-100 p-4">
+                                        <div class="icon-wrapper bg-soft-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title">Семинарлар</h3>
+                                        <p class="card-text text-muted">Білім беру тренингтері мен семинарлар өткіземін.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card feature-card h-100 p-4">
+                                        <div class="icon-wrapper bg-soft-success">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                                            </svg>
+                                        </div>
+                                        <h3 class="card-title">Кеңес беру</h3>
+                                        <p class="card-text text-muted">Білім саласындағы сұрақтарға кәсіби жауап беремін.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light">
-                    <a href="https://app.courstore.com/kk/courses/mzh-zhazuda-zamanaui-interaktivti-raldar-men-bels" class="btn btn-dark btn-sm rounded-pill">Сатып алу</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://web.courstore.com/wp-content/uploads/2023/11/1-1.jpg" class="card-img-top" alt="Product Image">
-                <div class="card-body">
-                    <h5 class="card-title">ҚМЖ: интерактивті құралдар, белсенді әдістер №2</h5>
-                    <p class="card-text">ҚМЖ жазуда заманауи интерактивті құралдар мен белсенді әдістерді қолдану (БАЗАЛЫҚ БІЛІМ)</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="h5 mb-0">70 000 ₸</span>
-                        <div>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-half text-warning"></i>
-                            <small class="text-muted">(4.5)</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light">
-                    <a href="https://app.courstore.com/kk/courses/copy-mzh-zhazuda-zamanaui-interaktivti-raldar-men-bels" class="btn btn-dark btn-sm rounded-pill">Сатып алу</a>
-                    <!--<button class="btn btn-outline-secondary btn-sm"><i class="bi bi-heart"></i></button>-->
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://web.courstore.com/wp-content/uploads/2023/11/1-1.jpg" class="card-img-top" alt="Product Image">
-                <div class="card-body">
-                    <h5 class="card-title">ҚМЖ: интерактивті құралдар, белсенді әдістер №3</h5>
-                    <p class="card-text">ҚМЖ жазуда заманауи интерактивті құралдар мен белсенді әдістерді қолдану (БАЗАЛЫҚ БІЛІМ)</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <span class="h5 mb-0">90 000 ₸</span>
-                        <div>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-half text-warning"></i>
-                            <small class="text-muted">(4.5)</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between bg-light">
-                    <a href="https://app.courstore.com/kk/courses/copy-copy-mzh-zhazuda-zamanaui-interaktivti-raldar-men-bels" class="btn btn-dark btn-sm rounded-pill">Сатып алу</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
-<p class="md-4"></p>
+                        <div class="container py-5">
+                            <div class="row justify-content-center">
+                                <div class="text-center mb-5">
+                                    <h1 class="section-heading display-4 mb-3">Танымал өнімдер</h1>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card product-card border-0 rounded-4 shadow-sm">
+                                        <div class="position-relative">
+                                            <div class="overflow-hidden">
+                                                <img src="https://web.courstore.com/wp-content/uploads/2023/11/1-1.jpg" class="card-img-top product-image" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <h5 class="card-title mb-3 fw-bold">ҚМЖ: интерактивті құралдар, белсенді әдістер №1</h5>
+                                            <p class="card-text text-muted mb-4">ҚМЖ жазуда заманауи интерактивті құралдар мен белсенді әдістерді қолдану (БАЗАЛЫҚ БІЛІМ)</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price">40 000 ₸</span>
+                                                <a href="https://app.courstore.com/kk/courses/mzh-zhazuda-zamanaui-interaktivti-raldar-men-bels" class="btn btn-dark text-white px-4 py-2 rounded-pill">
+                                                    Сатып алу
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card product-card border-0 rounded-4 shadow-sm">
+                                        <div class="position-relative">
+                                            <div class="overflow-hidden">
+                                                <img src="https://web.courstore.com/wp-content/uploads/2023/11/1-1.jpg" class="card-img-top product-image" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <h5 class="card-title mb-3 fw-bold">ҚМЖ: интерактивті құралдар, белсенді әдістер №2</h5>
+                                            <p class="card-text text-muted mb-4">ҚМЖ жазуда заманауи интерактивті құралдар мен белсенді әдістерді қолдану (БАЗАЛЫҚ БІЛІМ)</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price">70 000 ₸</span>
+                                                <a href="https://app.courstore.com/kk/courses/copy-mzh-zhazuda-zamanaui-interaktivti-raldar-men-bels" class="btn btn-dark text-white px-4 py-2 rounded-pill">
+                                                    Сатып алу
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card product-card border-0 rounded-4 shadow-sm">
+                                        <div class="position-relative">
+                                            <div class="overflow-hidden">
+                                                <img src="https://web.courstore.com/wp-content/uploads/2023/11/1-1.jpg" class="card-img-top product-image" alt="Product Image">
+                                            </div>
+                                        </div>
+                                        <div class="card-body p-4">
+                                            <h5 class="card-title mb-3 fw-bold">ҚМЖ: интерактивті құралдар, белсенді әдістер №3</h5>
+                                            <p class="card-text text-muted mb-4">ҚМЖ жазуда заманауи интерактивті құралдар мен белсенді әдістерді қолдану (БАЗАЛЫҚ БІЛІМ)</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <span class="price">90 000 ₸</span>
+                                                <a href="https://app.courstore.com/kk/courses/copy-copy-mzh-zhazuda-zamanaui-interaktivti-raldar-men-bels" class="btn btn-dark text-white px-4 py-2 rounded-pill">
+                                                    Сатып алу
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-<?php include('sections/footer.php'); ?>
+                        <div class="container py-5">
+                            <div class="text-center mb-5">
+                                <h1 class="section-heading display-4 mb-3">Пікірлер</h1>
+                            </div>
+                            <div class="row">
+                                <div class="card feature-card h-100 p-4">
+                                    <h3 class="card-title">Айжан С.</h3>
+                                    <p class="card-text text-muted">Кәсіби кеңестері мұғалімдік жолымда үлкен көмек болды.</p>
+                                </div>
+                                <div class="card feature-card h-100 p-4">
+                                    <h3 class="card-title">Асхат Қ.</h3>
+                                    <p class="card-text text-muted">Замзагүл ұстаздың семинарлары өте пайдалы болды!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section class="py-5">
+                            <div class="container">
+                                <div class="text-center mb-5">
+                                    <h1 class="section-heading display-4 mb-3">Менімен байланысыңыз</h1>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="contact-form p-5 card feature-card">
+                                            <form>
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Атыңыз">
+                                                    <label for="floatingInput">Аты</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Тегіңіз">
+                                                    <label for="floatingInput">Тегі</label>
+                                                </div>
+                                                <div class="form-floating mb-3">
+                                                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Электрондық пошта">
+                                                    <label for="floatingInput">Электрондық пошта</label>
+                                                </div>
+                                                <div class="col-12 mb-3">
+                                                    <textarea class="form-control custom-input" rows="5" placeholder="Хабарламаңыз"></textarea>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button class="btn btn-dark rounded-pill w-100 py-3" type="submit">Хабарлама жіберу</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+                        <p class="md-4"></p>
+
+                        <?php include('sections/footer.php'); ?>
