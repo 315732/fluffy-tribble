@@ -81,13 +81,13 @@ class Router
         }
 
         http_response_code(404);
+        echo "404 - Not Found";
     }
 }
 
 
 // Define custom routes
 Router::add('', 'HomeController', 'index'); // Default homepage
-
 
 Router::add('signin', 'SigninController', 'index');
 Router::add('signup', 'SignupController', 'index');
@@ -96,6 +96,13 @@ Router::add('signout', 'SignoutController', 'index');
 
 Router::add('course', 'CourseController', 'index');
 Router::add('about',  'AboutController',  'index');
+Router::add('blog', 'BlogController', 'index');
+Router::add('blog-list', 'BlogListController', 'index');
+
+
+Router::add('admin-signin', 'AdminSignInController', 'index');
+Router::add('admin-dashboard', 'AdminDashboardController', 'index');
+Router::add('admin-create-blog', 'AdminCreateBlogController', 'index');
 
 // Routes with dynamic parameters
 //Router::add('user/{id}', 'UserController', 'profile');

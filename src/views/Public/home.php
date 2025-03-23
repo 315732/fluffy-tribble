@@ -1,5 +1,21 @@
 <?php include 'sections/header.php'; ?>
 
+<div class="container">
+    <!-- Display success message -->
+    <?php if (!empty($successMessage)): ?>
+        <div class="alert alert-success" role="alert">
+            <?= htmlspecialchars($successMessage); ?>
+        </div>
+    <?php endif; ?>
+
+    <!-- Display error message -->
+    <?php if (!empty($errorMessage)): ?>
+        <div class="alert alert-danger" role="alert">
+            <?= htmlspecialchars($errorMessage); ?>
+        </div>
+    <?php endif; ?>
+</div>
+
 <header class="hero">
     <div class="container">
         <div class="row align-items-center">
@@ -159,21 +175,22 @@
                                 <div class="row justify-content-center">
                                     <div class="col-lg-8">
                                         <div class="contact-form p-5 card feature-card">
-                                            <form>
+                                            <form method="POST">
+                                                <input name="contact" type="hidden" value="1">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Атыңыз">
+                                                    <input name="firstname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="Атыңыз">
                                                     <label for="floatingInput">Аты</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control rounded-3" id="floatingInput" placeholder="Тегіңіз">
+                                                    <input name="lastname" type="text" class="form-control rounded-3" id="floatingInput" placeholder="Тегіңіз">
                                                     <label for="floatingInput">Тегі</label>
                                                 </div>
                                                 <div class="form-floating mb-3">
-                                                    <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Электрондық пошта">
+                                                    <input name="email" type="email" class="form-control rounded-3" id="floatingInput" placeholder="Электрондық пошта">
                                                     <label for="floatingInput">Электрондық пошта</label>
                                                 </div>
                                                 <div class="col-12 mb-3">
-                                                    <textarea class="form-control custom-input" rows="5" placeholder="Хабарламаңыз"></textarea>
+                                                    <textarea name="message" class="form-control custom-input" rows="5" placeholder="Хабарламаңыз"></textarea>
                                                 </div>
                                                 <div class="col-12">
                                                     <button class="btn btn-dark rounded-pill w-100 py-3" type="submit">Хабарлама жіберу</button>
@@ -184,7 +201,6 @@
                                 </div>
                             </div>
                         </section>
-
 
                         <p class="md-4"></p>
 
