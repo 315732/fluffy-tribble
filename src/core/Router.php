@@ -1,27 +1,12 @@
 <?php
-
 class Router
 {
     private static $routes = [];
-    private static $routed = false;
-    private static $basePath = '';
     
-    /**
-     * Set the base path for the application (if it's in a subdirectory)
-     */
-    public static function setBasePath($basePath)
-    {
-        self::$basePath = '/' . trim($basePath, '/');
-    }
-    
-    /**
-     * Adds a new route to the router.
-     */
     public static function add($route, $controller, $method = 'index')
     {
-        // Convert route patterns (e.g., 'user/{id}') into regex for matching
-        $pattern = preg_replace('/\{([a-zA-Z0-9_]+)\}/', '([a-zA-Z0-9-_]+)', $route);
-        self::$routes["/^" . str_replace('/', '\/', $pattern) . "$/"] = [
+        // Store routes in a simple format
+        self::$routes[$route] = [
             'controller' => $controller,
             'method' => $method
         ];
@@ -29,71 +14,41 @@ class Router
     
     public static function route($url)
     {
-        if (self::$routed) return;
-        self::$routed = true;
-        
+        // Extract the path from the URL
         $parsedUrl = parse_url($url);
         $path = trim($parsedUrl['path'] ?? '/', '/');
         
-        // Remove base path if set
-        if (!empty(self::$basePath)) {
-            $basePath = trim(self::$basePath, '/');
-            if (strpos($path, $basePath) === 0) {
-                $path = substr($path, strlen($basePath));
-            }
+        // Handle subdirectory if your site is in one
+        $scriptName = $_SERVER['SCRIPT_NAME'];
+        $scriptDir = dirname($scriptName);
+        if ($scriptDir != '/' && $scriptDir != '\\') {
+            $scriptDir = trim($scriptDir, '/');
+            $path = preg_replace('/^' . preg_quote($scriptDir, '/') . '/', '', $path);
         }
         
         $path = trim($path, '/');
         
-        // Handle empty path
-        if (empty($path)) {
-            $path = '';
-        }
-        
-        foreach (self::$routes as $pattern => $route)
-        {
-            if (preg_match($pattern, $path, $matches))
-            {
-                array_shift($matches); // Remove the full match
-                $controller = $route['controller'];
-                $method = $route['method'];
-                $controllerFile = "controllers/" . $controller . ".php";
-                
-                if (file_exists($controllerFile))
-                {
-                    require_once $controllerFile;
-                    if (class_exists($controller))
-                    {
-                        $instance = new $controller();
-                        if (method_exists($instance, $method))
-                        {
-                            $instance->$method(...$matches); // Pass extracted parameters
-                            return;
-                        }
-                        else
-                        {
-                            echo "Error: Method '$method' not found in $controller.";
-                        }
-                    }
-                    else
-                    {
-                        echo "Error: Class '$controller' not found.";
-                    }
-                }
-                else
-                {
-                    echo "Error: Controller file '$controllerFile' not found.";
-                }
-                http_response_code(404);
+        // Check if we have a direct match in our routes
+        if (isset(self::$routes[$path])) {
+            $controller = self::$routes[$path]['controller'];
+            $method = self::$routes[$path]['method'];
+            
+            // Load the controller file
+            $controllerFile = "controllers/{$controller}.php";
+            
+            if (file_exists($controllerFile)) {
+                require_once $controllerFile;
+                $instance = new $controller();
+                $instance->$method();
                 return;
             }
         }
         
-        http_response_code(404);
-        echo "404 - Not Found";
+        // No route found
+        header("HTTP/1.0 404 Not Found");
+        echo "404 - Page Not Found";
     }
 }
-
 
 // Define custom routes
 Router::add('', 'HomeController', 'index'); // Default homepage
