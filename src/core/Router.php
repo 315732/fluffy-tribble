@@ -87,7 +87,7 @@ class Router
 
 
 // Define custom routes
-Router::add('/', 'HomeController', 'index'); // Default homepage
+Router::add('', 'HomeController', 'index'); // Default homepage
 
 Router::add('/signin', 'SigninController', 'index');
 Router::add('/signup', 'SignupController', 'index');
