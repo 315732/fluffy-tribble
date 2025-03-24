@@ -1,25 +1,23 @@
 <?php
 
-/**
- * Class Router
- * 
- * A simple PHP router that maps URLs to controllers and methods.
- */
-
-class Router 
+class Router
 {
     private static $routes = [];
     private static $routed = false;
-
+    private static $basePath = '';
+    
+    /**
+     * Set the base path for the application (if it's in a subdirectory)
+     */
+    public static function setBasePath($basePath)
+    {
+        self::$basePath = '/' . trim($basePath, '/');
+    }
+    
     /**
      * Adds a new route to the router.
-     * Supports dynamic parameters like {id}.
-     * 
-     * @param string $route The URL pattern (e.g., 'user/{id}/profile').
-     * @param string $controller The controller class name.
-     * @param string $method The method to be called in the controller.
      */
-    public static function add($route, $controller, $method = 'index') 
+    public static function add($route, $controller, $method = 'index')
     {
         // Convert route patterns (e.g., 'user/{id}') into regex for matching
         $pattern = preg_replace('/\{([a-zA-Z0-9_]+)\}/', '([a-zA-Z0-9-_]+)', $route);
@@ -28,58 +26,69 @@ class Router
             'method' => $method
         ];
     }
-
-    public static function route($url) 
+    
+    public static function route($url)
     {
         if (self::$routed) return;
         self::$routed = true;
-
+        
         $parsedUrl = parse_url($url);
         $path = trim($parsedUrl['path'] ?? '/', '/');
-
-        foreach (self::$routes as $pattern => $route) 
+        
+        // Remove base path if set
+        if (!empty(self::$basePath)) {
+            $basePath = trim(self::$basePath, '/');
+            if (strpos($path, $basePath) === 0) {
+                $path = substr($path, strlen($basePath));
+            }
+        }
+        
+        $path = trim($path, '/');
+        
+        // Handle empty path
+        if (empty($path)) {
+            $path = '';
+        }
+        
+        foreach (self::$routes as $pattern => $route)
         {
-            if (preg_match($pattern, $path, $matches)) 
+            if (preg_match($pattern, $path, $matches))
             {
                 array_shift($matches); // Remove the full match
-
                 $controller = $route['controller'];
                 $method = $route['method'];
-
                 $controllerFile = "controllers/" . $controller . ".php";
-                if (file_exists($controllerFile)) 
+                
+                if (file_exists($controllerFile))
                 {
                     require_once $controllerFile;
-
                     if (class_exists($controller))
                     {
                         $instance = new $controller();
-
-                        if (method_exists($instance, $method)) 
+                        if (method_exists($instance, $method))
                         {
                             $instance->$method(...$matches); // Pass extracted parameters
                             return;
                         }
-                        else 
+                        else
                         {
                             echo "Error: Method '$method' not found in $controller.";
                         }
                     }
-                    else 
+                    else
                     {
                         echo "Error: Class '$controller' not found.";
                     }
-                } 
-                else 
-                {
-                    echo "404 - Not Found";
                 }
-
+                else
+                {
+                    echo "Error: Controller file '$controllerFile' not found.";
+                }
                 http_response_code(404);
                 return;
             }
         }
-
+        
         http_response_code(404);
         echo "404 - Not Found";
     }
