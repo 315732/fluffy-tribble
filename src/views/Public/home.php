@@ -1,5 +1,6 @@
 <?php include 'sections/header.php'; ?>
-error_log('Request URI: ' . $_SERVER['REQUEST_URI']);
+<?php error_log('Request URI: ' . $_SERVER['REQUEST_URI']);?>
+
 <div class="container">
     <!-- Display success message -->
     <?php if (!empty($successMessage)): ?>
