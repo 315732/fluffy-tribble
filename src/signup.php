@@ -1,4 +1,56 @@
-<?php include('sections/header.php'); ?>
+<?php include 'sections/dependency.php'; ?>
+
+<?php
+
+require '../Database.php';
+
+$successMessage = "";
+$errorMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
+    if (empty($_POST['username']) || empty($_POST['email']) || empty($_POST['password']) || empty($_POST['password_match'])) {
+        $errorMessage = "Барлық өрістерді толтырыңыз!";
+    } else {
+        $username      = trim(htmlspecialchars($_POST['username']));
+        $email         = trim(htmlspecialchars($_POST['email']));
+        $password      = trim(htmlspecialchars($_POST['password']));
+        $passwordMatch = trim(htmlspecialchars($_POST['password_match']));
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $errorMessage = "Электрондық пошта дұрыс емес!";
+        } elseif ($password !== $passwordMatch) {
+            $errorMessage = "Құпиясөздер сәйкес келмейді!";
+        } elseif (strlen($password) < 8) {
+            $errorMessage = "Құпиясөз кемінде 8 таңбадан тұруы керек!";
+        } else {
+            $pdo = Database::connect();
+
+            // Check if username or email already exists
+            $stmt = $pdo->prepare("SELECT COUNT(*) FROM users WHERE username = ? OR email = ?");
+            $stmt->execute([$username, $email]);
+
+            if ($stmt->fetchColumn() > 0) {
+                $errorMessage = "Бұл пайдаланушы аты немесе электрондық пошта тіркелген!";
+            } else {
+                // Hash the password and insert user
+                $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+                $stmt = $pdo->prepare("INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)");
+
+                try {
+                    $stmt->execute([$username, $email, $passwordHash]);
+                    $successMessage = "Тіркелу сәтті аяқталды! Қазір кіруге болады.";
+                    header("Location: signin.php");
+                    exit();
+                } catch (PDOException $e) {
+                    $errorMessage = "Қате пайда болды: " . $e->getMessage();
+                }
+            }
+        }
+    }
+}
+?>
+
+<?php include 'sections/header.php'; ?>
 
 <div class="modal modal-sheet position-static d-block p-4 py-md-5" tabindex="-1" role="dialog" id="modalSignin">
     <div class="modal-dialog" role="document">
@@ -48,4 +100,4 @@
     </div>
 </div>
 
-<?php include('sections/footer.php'); ?>
+<?php include 'sections/footer.php'; ?>

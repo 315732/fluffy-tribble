@@ -1,4 +1,6 @@
-<?php include('sections/header.php'); ?>
+<?php include 'sections/dependency.php'; ?>
+
+<?php include'sections/header.php'; ?>
 
 <main class="container">
 
@@ -76,4 +78,4 @@
 
 </main>
 
-<?php include('sections/footer.php'); ?>
+<?php include 'sections/footer.php'; ?>
