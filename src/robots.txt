@@ -1,0 +1,11 @@
+User-agent: *
+
+Disallow: /sections/
+Disallow: /admin/
+Disallow: /course.php
+Disallow: /signout.php
+Disallow: /blogs.php
+Disallow: /post.php
+Allow: /
+
+Sitemap: https://zamzametodika.kz/sitemap.xml

@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['contact'])) {
                 <div class="card product-card border-0 rounded-4 shadow-sm">
                     <div class="position-relative">
                         <div class="overflow-hidden">
-                            <img src="images/image1.jpg" alt="App Screenshot" class="card-img-top product-image-main">
+                            <img src="images/image1.jpg" alt="App Screenshot" class="card-img product-image-main">
                         </div>
                     </div>
                 </div>

@@ -1,24 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="kk">
 
 <head>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="Elster">
-	<meta name="generator" content="Elster">
+	<meta name="description"
+		content="Досымова Замзагүл Муратбековна – жас мұғалімдерге, аттестатталушы ұстаздарға және колледж, ЖОО оқытушыларына арналған білім беру курстарын ұсынады.">
+	<meta name="keywords"
+		content="Досымова Замзагүл, мұғалімдерге көмек, ҚМЖ жазу, жаңартылған бағдарлама, СТО технологиясы, аттестация, білім беру курстары">
+	<meta name="author" content="Досымова Замзагүл">
+	<meta name="robots" content="index, follow">
 
-	<title>Home</title>
+	<title>Досымова Замзагүл | Мұғалімдерге арналған курстар</title>
 
+	<!-- Open Graph Meta Tags (For Social Media) -->
+	<meta property="og:title" content="Досымова Замзагүл - Мұғалімдерге арналған курстар">
+	<meta property="og:description"
+		content="ҚМЖ жазу алгоритмі, жаңартылған бағдарлама, аттестацияға дайындық курстары. Мұғалімдер үшін тиімді әдіс-тәсілдер.">
+	<meta property="og:image" content="https://zamzametodika.kz/images/image1.jpg">
+	<meta property="og:url" content="https://zamzametodika.kz">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Досымова Замзагүл">
 
+	<!-- Twitter Card (For Twitter Sharing) -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Досымова Замзагүл - Мұғалімдерге арналған курстар">
+	<meta name="twitter:description"
+		content="Жас мұғалімдерге, аттестатталушы ұстаздарға арналған білім беру курстары.">
+	<meta name="twitter:image" content="https://zamzametodika.kz/images/image1.jpg">
+	<meta name="twitter:site" content="@Zamza_metodika1">
+
+	<!-- Canonical URL -->
+	<link rel="canonical" href="https://zamzametodika.kz/">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="https://zamzametodika.kz/favicon.png">
+
+	<!-- Structured Data (Schema.org) -->
+	<script type="application/ld+json">
+	{
+	  "@context": "https://schema.org",
+	  "@type": "Person",
+	  "name": "Досымова Замзагүл Муратбековна",
+	  "url": "https://zamzametodika.kz/",
+	  "image": "https://zamzametodika.kz/images/image1.jpg",
+	  "jobTitle": "Педагог-шебер",
+	  "description": "ҚМЖ жазу алгоритмі, жаңартылған бағдарлама, СТО технологиясы бойынша тренер.",
+	  "sameAs": [
+		"https://www.instagram.com/Zamza_metodika1",
+		"https://www.youtube.com/channel/...",
+		"https://zamzametodika.kz/"
+	  ],
+	  "contactPoint": {
+		"@type": "ContactPoint",
+		"telephone": "+77079678488",
+		"contactType": "customer service",
+		"availableLanguage": ["Қазақша", "Орысша"]
+	  }
+	}
+	</script>
+
+	<!-- Stylesheets -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
 	<link rel="stylesheet" href="sections/styles/style.css">
-
 
 </head>
 
