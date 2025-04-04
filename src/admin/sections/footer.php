@@ -9,8 +9,8 @@
         </a>
 
         <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Негізгі бет</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Мен туралы</a></li>
+            <li class="nav-item"><a href="admin-dashboard.php" class="nav-link px-2 text-dark">Негізгі бет</a></li>
+            <!--<li class="nav-item"><a href="#" class="nav-link px-2 text-dark">Мен туралы</a></li>-->
         </ul>
     </footer>
 </div>

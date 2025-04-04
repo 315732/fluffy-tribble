@@ -5,6 +5,7 @@ DROP TABLE IF EXISTS videos;
 DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS lectures;
 DROP TABLE IF EXISTS blogs;
+DROP TABLE IF EXISTS categories;
 
 -- Create the lectures table
 CREATE TABLE lectures (
@@ -76,6 +77,14 @@ CREATE TABLE blogs (
     content LONGTEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE categories (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,  
+    title VARCHAR(255) NOT NULL UNIQUE,
+    descriptions TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 
 INSERT INTO admins (username, email, password_hash)
 VALUES ('admin', 'admin@example.com', '$2y$10$k9xssByQWpuRyDtsk/QTgOsE1t3xd.QwSnErOdY4lD31icqVeSwF2')
